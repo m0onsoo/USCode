@@ -8,12 +8,12 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 
 ## 🧑‍💻 Members
 
-| Name | 
-|------|
-| [Member 1] |
-| [Member 2] |
-| [Member 3] |
-| [Member 4] |
+| Name | |
+|------| ---- |
+| Moonsoo Park | [@m0onsoo](https://github.com/m0onsoo) |
+| [Member 2] | |
+| [Member 3] | |
+| [Member 4] | |
 
 ## 💻 Workflow & Rules
 
