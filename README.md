@@ -11,7 +11,7 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 | Name | |
 |------| ---- |
 | Moonsoo Park | [@m0onsoo](https://github.com/m0onsoo) |
-| [Member 2] | |
+| Ji Min Lee | [@masibasi](https://github.com/masibasi) |
 | [Member 3] | |
 | [Member 4] | |
 
