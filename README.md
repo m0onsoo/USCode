@@ -70,17 +70,22 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 #### Week 9: 1-D Dynamic Programming
 1. [NeetCode] #322. Coin Change
 2. [NeetCode] #139. Word Break
-3. [FAANG Interview] #198. House Robber (Google/Amazon)
+3. [FAANG Interview] #198. House Robber (Moloco)
 
 #### Week 10: 2-D Dynamic Programming
 1. [NeetCode] #62. Unique Paths
 2. [NeetCode] #1143. Longest Common Subsequence
-3. [FAANG Interview] #5. Longest Palindromic Substring (Amazon/Google)
+3. [FAANG Interview] #140. Word Break II (Amazon/Google)
 
 #### Week 11: Greedy & Intervals
 1. [NeetCode] #55. Jump Game
 2. [NeetCode] #56. Merge Intervals
 3. [FAANG Interview] #435. Non-overlapping Intervals (Meta/Google)
+
+#### Week 12: Bit Manipulation
+1. [NeetCode] #7. Reverse Integer
+2. [NeetCode] #371. Sum of Two Integers
+3. [FAANG Interview] #137. Single Number II (Google/Amazon/Apple)
 
 ## 📚 References
 
