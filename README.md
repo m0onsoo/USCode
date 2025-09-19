@@ -12,8 +12,8 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 |------| ---- |
 | Moonsoo Park | [@m0onsoo](https://github.com/m0onsoo) |
 | Ji Min Lee | [@masibasi](https://github.com/masibasi) |
-| [Member 3] | |
-| [Member 4] | |
+| Yoonjae Hwang | [@YoonjaeH](https://github.com/YoonjaeH) |
+| Ellie Eunsung Roh | [@happysungb](https://github.com/happysungb) |
 
 ## 💻 Workflow & Rules
 
