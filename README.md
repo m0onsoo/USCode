@@ -17,7 +17,15 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 
 ## 💻 Workflow & Rules
 
-*To be defined after team discussion and agreement*
+
+- Use the format: `problem number_person name` 
+
+
+- Push your solutions before the study session day and merge during the study session time
+
+- Explain your solution process through comments (in English)
+- Include LeetCode's suggested time complexity and space complexity as comments at the top of each file
+
 
 ## 🗓️ Roadmap
 
