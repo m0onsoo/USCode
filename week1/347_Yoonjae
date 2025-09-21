@@ -1,0 +1,22 @@
+#NeetCode347: Top K Frequent Elements
+
+import heapq
+from typing import List
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        heap = []
+        counter = {}
+
+        for n in nums:
+            counter[n] = 1 + counter.get(n,0)
+
+        sol = []
+        
+        for key, val in counter.items():
+            heapq.heappush(heap,(-val, key))
+        
+        while len(sol) < k:
+            sol.append(heapq.heappop(heap)[1])
+        
+        return sol
