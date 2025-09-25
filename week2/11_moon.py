@@ -2,14 +2,16 @@ import heapq
 from typing import List
 
 class Solution:
-    # 431 ms, 38.63MB
+    # 419ms, 38.2MB
     def maxArea(self, height: List[int]) -> int:
         # initialzie an array for heap structrue
         heap = []
 
+        # it takes O(n) to build a heap
         for i, h in enumerate(height):
-            # it takes O(nlogn) to build a heap using heap push
-            heapq.heappush(heap, (-h, i))
+            heap.append((-h, i))
+        heapq.heapify(heap)
+
         
         # extract two top nodes for initial left and right pointer
         left = heapq.heappop(heap)
@@ -21,6 +23,7 @@ class Solution:
         # calculate initial amount of water
         stored = (right[1] - left[1]) * min(abs(left[0]), abs(right[0]))
 
+        # loop takes O(nlogn)
         while heap:
             # extract node with max height
             root = heapq.heappop(heap)
@@ -34,7 +37,7 @@ class Solution:
                 right = root
             else:
                 # left[1] < idx and idx < right[1]
-                # if idx is between left and right, you don't need to anything
+                # if idx is between left and right, you don't need to anything but I just add continue
                 continue
             
             # calculate current amount of water
