@@ -1,0 +1,38 @@
+#Brute
+from typing import List
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        sol = []
+        for i in range(len(nums)):
+            dum = 1
+            for j in range(len(nums)):
+                if i != j:
+                    dum = dum * nums[j]
+            sol.append(dum)
+        return sol
+    
+#With Division:
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        prod = 1
+        zeroCt = 0
+        for n in nums:
+            if n:
+                prod *= n
+            else:
+                zeroCt += 1
+        
+        if zeroCt > 1:
+            return [0] * len(nums)
+        
+        sol = [0] * len(nums)
+        for i, c in enumerate(nums):
+            if zeroCt:
+                if c:
+                    sol[i] = 0
+                else:
+                    sol[i] = prod
+            else:
+                sol[i] = prod // c
+        return sol
