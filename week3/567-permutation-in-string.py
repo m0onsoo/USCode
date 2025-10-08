@@ -39,29 +39,19 @@ class Solution:
         return False
 
 
-# from collections import Counter
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        window_size = len(s1)
+        len_s2 = len(s2)
 
-# class Solution:
-#     def checkInclusion(self, s1: str, s2: str) -> bool:
-#         n, m = len(s1), len(s2)
-#         if n > m:
-#             return False
+        count = Counter(s1)
+        window = Counter(s2[:window_size])
 
-#         s1_count = Counter(s1)
-#         window = Counter(s2[:n])
-
-#         if window == s1_count:
-#             return True
-
-#         for i in range(n, m):
-#             window[s2[i]] += 1
-#             window[s2[i - n]] -= 1
-
-#             # Clean up to keep the dict size small
-#             if window[s2[i - n]] == 0:
-#                 del window[s2[i - n]]
-
-#             if window == s1_count:
-#                 return True
-
-#         return False
+        if count == window:
+            return True
+        for i in range(window_size, len_s2):
+            window[s2[i - window_size]] -= 1
+            window[s2[i]] += 1
+            if count == window:
+                return True
+        return False
