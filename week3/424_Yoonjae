@@ -1,0 +1,28 @@
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        # sol = 1
+        # for i in range(len(s)):
+        #     ct = 0
+        #     comp = 1
+        #     j = i + 1
+        #     while ct < k and j < len(s):
+        #         if (s[i] != s[j]):
+        #             ct += 1
+        #         j += 1
+        #         comp += 1
+        #     sol = max(sol, comp)
+        # return sol
+
+        #Help from GPT
+        count = 0
+        left = 0
+        freq = defaultdict(int)
+
+        for right in range(len(s)):
+            freq[s[right]] += 1
+            count = max(count, freq[s[right]])
+
+            if right - left + 1 - count > k:
+                freq[s[left]] -= 1
+                left +=1
+        return len(s) - left
