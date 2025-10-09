@@ -1,0 +1,29 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        # sol = 0
+        # for i in range(len(s)):
+        #     dum = ""
+        #     comp = 0
+        #     for j in range(i, len(s)):
+        #         if s[j] not in dum:
+        #             dum += s[j]
+        #             comp += 1
+        #             sol = max(comp, sol)
+        #         else:
+        #             break
+        # return sol
+        
+        sol = 0
+        tracker = set()
+        l = 0
+
+        for r in range(len(s)):
+            if s[r] not in tracker:
+                tracker.add(s[r])
+                sol = max(sol, r - l + 1)
+            else:
+                while s[r] in tracker:
+                    tracker.remove(s[l])
+                    l += 1
+                tracker.add(s[r])
+        return sol
