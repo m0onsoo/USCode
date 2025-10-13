@@ -18,7 +18,7 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 ## 💻 Workflow & Rules
 
 
-- Use the format: `problem number_person name` 
+- Use the format: `problem number_person name.py` 
 
 
 - Push your solutions before the study session day and merge during the study session time
@@ -53,37 +53,38 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 
 ### 2️⃣ Phase 2: Core Pattern Mastery (Weeks 5-8)
 
-#### Week 5: Linked List
-1. [NeetCode] #19. Remove Nth Node From End of List
-2. [NeetCode] #143. Reorder List
-3. [FAANG Interview] #2. Add Two Numbers (Amazon/Meta)
-
-#### Week 6: Trees
-1. [NeetCode] #102. Binary Tree Level Order Traversal
-2. [NeetCode] #98. Validate Binary Search Tree
-3. [FAANG Interview] #230. Kth Smallest Element in a BST (Amazon/Meta)
-
-#### Week 7: Heaps (Priority Queue) & Tries
-1. [NeetCode] #973. K Closest Points to Origin
-2. [NeetCode] #211. Design Add and Search Words Data Structure
-3. [FAANG Interview] #215. Kth Largest Element in an Array (Amazon/Meta)
-
-#### Week 8: Backtracking & Graphs
-1. [NeetCode] #46. Permutations
-2. [NeetCode] #207. Course Schedule
-3. [FAANG Interview] #79. Word Search (Amazon/Meta)
-
-### 3️⃣ Phase 3: Advanced & Real-world Preparation (Weeks 9-11)
-
-#### Week 9: 1-D Dynamic Programming
+#### Week 5: 1-D Dynamic Programming
 1. [NeetCode] #322. Coin Change
 2. [NeetCode] #139. Word Break
 3. [FAANG Interview] #198. House Robber (Moloco)
 
-#### Week 10: 2-D Dynamic Programming
+#### Week 6: 2-D Dynamic Programming
 1. [NeetCode] #62. Unique Paths
 2. [NeetCode] #1143. Longest Common Subsequence
 3. [FAANG Interview] #140. Word Break II (Amazon/Google)
+
+#### Week 7: Linked List
+1. [NeetCode] #19. Remove Nth Node From End of List
+2. [NeetCode] #143. Reorder List
+3. [FAANG Interview] #2. Add Two Numbers (Amazon/Meta)
+
+#### Week 8: Trees
+1. [NeetCode] #102. Binary Tree Level Order Traversal
+2. [NeetCode] #98. Validate Binary Search Tree
+3. [FAANG Interview] #230. Kth Smallest Element in a BST (Amazon/Meta)
+
+
+### 3️⃣ Phase 3: Advanced & Real-world Preparation (Weeks 9-11)
+
+#### Week 9: Heaps (Priority Queue) & Tries
+1. [NeetCode] #973. K Closest Points to Origin
+2. [NeetCode] #211. Design Add and Search Words Data Structure
+3. [FAANG Interview] #215. Kth Largest Element in an Array (Amazon/Meta)
+
+#### Week 10: Backtracking & Graphs
+1. [NeetCode] #46. Permutations
+2. [NeetCode] #207. Course Schedule
+3. [FAANG Interview] #79. Word Search (Amazon/Meta)
 
 #### Week 11: Greedy & Intervals
 1. [NeetCode] #55. Jump Game
