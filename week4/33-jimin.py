@@ -1,31 +1,25 @@
-# https://leetcode.com/problems/search-a-2d-matrix/
-# 74-search-a-2d-matrix
-
-
-# Brute force:
-## search all - n^2
-
-# Optimize
-## attatch all rows into one row
-
-
+# https://leetcode.com/problems/search-in-rotated-sorted-array/
+# 33-search-in-rotated-sorted-array
 class Solution:
-    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        rows, cols = len(matrix), len(matrix[0])
-        if not matrix or not matrix[0]:
-            return False
+    def search(self, nums: List[int], target: int) -> int:
+        l = 0
+        r = len(nums) - 1
 
-        array = []
-        left = 0
-        right = rows * cols - 1
-        while left <= right:
-            mid = (left + right) // 2
-            r = mid // cols
-            c = mid % cols
-            if matrix[r][c] == target:
-                return True
-            elif matrix[r][c] > target:
-                right = mid - 1
-            elif matrix[r][c] < target:
-                left = mid + 1
-        return False
+        while l <= r:
+            mid = (l + r) // 2
+            if nums[mid] == target:
+                return mid
+
+            # 왼쪽 절반이 정렬된 경우
+            if nums[l] <= nums[mid]:
+                if nums[l] <= target < nums[mid]:
+                    r = mid - 1
+                else:
+                    l = mid + 1
+            # 오른쪽 절반이 정렬된 경우
+            else:
+                if nums[mid] < target <= nums[r]:
+                    l = mid + 1
+                else:
+                    r = mid - 1
+        return -1
