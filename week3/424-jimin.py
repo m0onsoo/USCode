@@ -1,30 +1,31 @@
-# https://leetcode.com/problems/longest-substring-without-repeating-characters/
-# 3-longest-substring-without-repeating-characters
+# https://leetcode.com/problems/longest-repeating-character-replacement/
+# 424-longest-repeating-character-replacement
 
-# IDea:
-## Brute force:
-## search for all possible substrings -> n^2
+# idea:
+# brute force:
+# check all possible substrings and availability -> n^3
 
-
-# 아이디어
-## 투 포인터 + 세트
-## 만약 이미 본 캐릭터면 왼쪽 포인터 증가
+## sliding window
+## count all elements while sliding.
+## if topfreq - windowsize > k -> shorten window size
+from collections import defaultdict
 
 
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        l = 0
-        seen = {}
+    def characterReplacement(self, s: str, k: int) -> int:
+        count = defaultdict(int)
 
-        temp_max = 0
-        result = 0
+        l = 0
+        max_freq = 0
+        ans = 0
 
         for r, char in enumerate(s):
-            if char in seen and seen[char] >= l:
-                l = seen[char] + 1
-            temp_max = r - l + 1
-            print(temp_max, r, l, char)
-            seen[char] = r
-            result = max(temp_max, result)
+            count[char] += 1
+            max_freq = max(max_freq, count[char])
 
-        return result
+            while (r - l + 1) - max_freq > k:
+                count[s[l]] -= 1
+                l += 1
+
+            ans = max(ans, r - l + 1)
+        return ans
