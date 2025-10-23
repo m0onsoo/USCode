@@ -1,0 +1,18 @@
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+        if s in wordDict:
+            return [s]
+        if not s:
+            return []
+        
+        sol = []
+
+        for word in wordDict:
+            if not s.startswith(word):
+                continue
+            else:
+                dummy = self.wordBreak(s[len(word):], wordDict)
+                for x in dummy:
+                    x = word + ' ' + x
+                    sol.append(x)
+        return sol
