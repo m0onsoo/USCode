@@ -1,0 +1,19 @@
+#BruteForce
+class Solution:
+    def treeToArray(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        q = deque()
+        q.append(root)
+        while q:
+            for _ in range(len(q)):
+                node = q.popleft()
+                res.append(node.val)
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+        return res
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        arr = self.treeToArray(root)
+        arr.sort()
+        return arr[k-1]
