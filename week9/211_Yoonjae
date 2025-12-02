@@ -1,0 +1,37 @@
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.tail = False
+
+class WordDictionary:
+
+    def __init__(self):
+        self.root = TrieNode()
+
+    def addWord(self, word: str) -> None:
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.tail = True
+        
+    def search(self, word: str) -> bool:
+        def dfs(node, idx):
+            if idx == len(word):
+                return node.tail
+            ch = word[idx]
+            if ch == '.':
+                #흠...
+                return any(dfs(w, idx + 1) for w in node.children.values())
+            if ch not in node.children:
+                return False
+            return dfs(node.children[ch], idx + 1)
+        return dfs(self.root, 0)
+        
+
+
+# Your WordDictionary object will be instantiated and called as such:
+# obj = WordDictionary()
+# obj.addWord(word)
+# param_2 = obj.search(word)
