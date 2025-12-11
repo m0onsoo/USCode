@@ -1,0 +1,30 @@
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        #DAG면 좋아요!
+        graph = defaultdict(list)
+        for v, u in prerequisites:
+            graph[u].append(v)
+
+        curr = set()
+        complete = set()
+
+        def dfs(node):
+            if node in curr:
+                return False
+            if node in complete:
+                return True
+            
+            curr.add(node)
+            for vertex in graph[node]:
+                if not dfs(vertex):
+                    return False
+            
+            curr.remove(node)
+            complete.add(node)
+            return True
+
+        for i in range(numCourses):
+            if not dfs(i):
+                return False
+
+        return True
