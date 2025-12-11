@@ -1,0 +1,24 @@
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if self.dfs(board, word, i, j, 0):
+                    return True
+        return False
+    
+    def dfs(self, board: List[List[str]], word: str, i: int, j: int, idx: int) -> bool:
+        m = len(board)
+        n = len(board[0])
+        if(i < 0 or i >= m or j < 0 or j >= n or board[i][j] != word[idx]):
+            return False
+        if(idx == len(word) - 1):
+            return True
+        dummy = board[i][j]
+        board[i][j] = '*'
+        possible = (self.dfs(board, word, i, j - 1, idx + 1) or
+                   self.dfs(board, word, i, j + 1, idx + 1) or 
+                   self.dfs(board, word, i - 1, j, idx + 1) or
+                   self.dfs(board, word, i + 1, j, idx + 1))
+
+        board[i][j] = dummy
+        return possible
