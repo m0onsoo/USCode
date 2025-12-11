@@ -1,37 +1,49 @@
-# https://leetcode.com/problems/word-search/
-# 79-word-search
+# https://leetcode.com/problems/course-schedule/
+# 207-course-schedule
+
+from collections import defaultdict
 
 
 class Solution:
-    def exist(self, board: List[List[str]], word: str) -> bool:
-        rows, cols = len(board), len(board[0])
-        visited = [[0 for _ in range(cols)] for _ in range(rows)]
-        ans = False
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
 
-        dirs = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        indegree = defaultdict(int)
+        # calculate indegree
+        for a, b in prerequisites:
+            indegree[b] += 1
 
-        def dfs(r, c, remaining):
-            if not (0 <= r < rows and 0 <= c < cols):
-                return False
-            if visited[r][c] == True:
-                return False
-            if remaining[0] != board[r][c]:
-                return False
-            if len(remaining) == 1:
-                return True
+        # create hashmap for relations
+        need_class = defaultdict(list)
+        for a, b in prerequisites:
+            need_class[a].append(b)
 
-            ans = False
-            if remaining[0] == board[r][c]:
-                visited[r][c] = True
-                for dr, dc in dirs:
-                    ans = ans or dfs(r + dr, c + dc, remaining[1:])
-                visited[r][c] = False
-            return ans
+        q = deque([])
+        # count indegree == 0
+        for i in range(numCourses):
+            if indegree[i] == 0:
+                q.append(i)
 
-        final_ans = False
-        for i in range(rows):
-            for j in range(cols):
-                if word[0] == board[i][j]:
-                    final_ans = final_ans or dfs(i, j, word)
+        remaining = numCourses
+        while q:
+            cur = q.popleft()
+            for c in need_class[cur]:
+                indegree[c] -= 1
+                if indegree[c] == 0:
+                    q.append(c)
+            remaining -= 1
 
-        return final_ans
+        return True if remaining == 0 else False
+
+        # while indegree_zero > 1:
+        #     for course in courses:
+        #         if indegree[course] == 0:
+        #             for c in need_class[course]:
+        #                 indegree[c] -= 1
+        #                 if indegree[c] == 0:
+        #                     indegree_zero += 1
+        #             indegree_zero -= 1
+        #             del indegree[course]
+
+        # if len(indegree) > 0:
+        #     return False
+        # else: return True
