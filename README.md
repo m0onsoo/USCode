@@ -14,6 +14,7 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 | Ji Min Lee | [@masibasi](https://github.com/masibasi) |
 | Yoonjae Hwang | [@YoonjaeH](https://github.com/YoonjaeH) |
 | Ellie Eunsung Roh | [@happysungb](https://github.com/happysungb) |
+| Minho Jang | [@wkdalsgh192](https://github.com/wkdalsgh192) |
 
 ## 💻 Workflow & Rules
 
@@ -95,6 +96,122 @@ Our mission is to build a strong foundation in data structures, algorithms, and 
 1. [NeetCode] #7. Reverse Integer
 2. [NeetCode] #371. Sum of Two Integers
 3. [FAANG Interview] #137. Single Number II (Google/Amazon/Apple)
+
+### 4️⃣ Phase 4: Randomized Mock Interviews (Weeks 13-20)
+
+#### Week 13
+1. [Easy] #680. Valid Palindrome II
+2. [Easy] #226. Invert Binary Tree
+3. [Medium] #695. Max Area of Island
+4. [Medium] #287. Find the Duplicate Number
+5. [Hard] #135. Candy
+
+#### Week 14
+1. [Easy] #122. Best Time to Buy and Sell Stock II
+2. [Easy] #71. Simplify Path
+3. [Medium] #133. Clone Graph
+4. [Medium] #213. House Robber II
+5. [Hard] #23. Merge k Sorted Lists
+
+#### Week 15
+1. [Easy] #104. Maximum Depth of Binary Tree
+2. [Easy] #217. Contains Duplicate
+3. [Medium] #54. Spiral Matrix
+4. [Medium] #518. Coin Change II
+5. [Hard] #76. Minimum Window Substring
+
+#### Week 16
+1. [Easy] #242. Valid Anagram
+2. [Easy] #141. Linked List Cycle
+3. [Medium] #210. Course Schedule II
+4. [Medium] #53. Maximum Subarray
+5. [Hard] #297. Serialize and Deserialize Binary Tree
+
+#### Week 17
+1. [Easy] #70. Climbing Stairs
+2. [Easy] #543. Diameter of Binary Tree
+3. [Medium] #994. Rotting Oranges
+4. [Medium] #560. Subarray Sum Equals K
+5. [Hard] #127. Word Ladder
+
+#### Week 18
+1. [Easy] #206. Reverse Linked List
+2. [Easy] #704. Binary Search
+3. [Medium] #17. Letter Combinations of a Phone Number
+4. [Medium] #739. Daily Temperatures
+5. [Hard] #295. Find Median from Data Stream
+
+#### Week 19
+1. [Easy] #110. Balanced Binary Tree
+2. [Easy] #1. Two Sum
+3. [Medium] #130. Surrounded Regions
+4. [Medium] #152. Maximum Product Subarray
+5. [Hard] #84. Largest Rectangle in Histogram
+
+#### Week 20
+1. [Easy] #572. Subtree of Another Tree
+2. [Easy] #155. Min Stack
+3. [Medium] #684. Redundant Connection
+4. [Medium] #438. Find All Anagrams in a String
+5. [Hard] #124. Binary Tree Maximum Path Sum
+
+### 5️⃣ Phase 5: High-Frequency Mix (Weeks 21-28)
+
+#### Week 21
+1. [Easy] #268. Missing Number
+2. [Easy] #100. Same Tree
+3. [Medium] #417. Pacific Atlantic Water Flow
+4. [Medium] #36. Valid Sudoku
+5. [Hard] #239. Sliding Window Maximum
+
+#### Week 22
+1. [Easy] #21. Merge Two Sorted Lists
+2. [Easy] #1046. Last Stone Weight
+3. [Medium] #399. Evaluate Division
+4. [Medium] #5. Longest Palindromic Substring
+5. [Hard] #25. Reverse Nodes in k-Group
+
+#### Week 23
+1. [Easy] #234. Palindrome Linked List
+2. [Easy] #338. Counting Bits
+3. [Medium] #73. Set Matrix Zeroes
+4. [Medium] #621. Task Scheduler
+5. [Hard] #329. Longest Increasing Path in a Matrix
+
+#### Week 24
+1. [Easy] #108. Convert Sorted Array to BST
+2. [Easy] #392. Is Subsequence
+3. [Medium] #743. Network Delay Time
+4. [Medium] #146. LRU Cache
+5. [Hard] #41. First Missing Positive
+
+#### Week 25
+1. [Easy] #617. Merge Two Binary Trees
+2. [Easy] #283. Move Zeroes
+3. [Medium] #48. Rotate Image
+4. [Medium] #91. Decode Ways
+5. [Hard] #212. Word Search II
+
+#### Week 26
+1. [Easy] #160. Intersection of Two Linked Lists
+2. [Easy] #509. Fibonacci Number
+3. [Medium] #138. Copy List with Random Pointer
+4. [Medium] #300. Longest Increasing Subsequence
+5. [Hard] #4. Median of Two Sorted Arrays
+
+#### Week 27
+1. [Easy] #112. Path Sum
+2. [Easy] #202. Happy Number
+3. [Medium] #542. 01 Matrix
+4. [Medium] #16. 3Sum Closest
+5. [Hard] #10. Regular Expression Matching
+
+#### Week 28
+1. [Easy] #190. Reverse Bits
+2. [Easy] #94. Binary Tree Inorder Traversal
+3. [Medium] #547. Number of Provinces
+4. [Medium] #452. Minimum Number of Arrows to Burst Balloons
+5. [Hard] #85. Maximal Rectangle
 
 ## 📚 References
 
