@@ -1,0 +1,15 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        col = Counter(nums)
+        for a, b in col.items():
+            if b > 1:
+                return True
+        return False
+
+        # col = set()
+        # for n in nums:
+        #     if n in col:
+        #         return True
+        #     else:
+        #         col.add(n)
+        # return False
