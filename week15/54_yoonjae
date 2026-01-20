@@ -1,0 +1,43 @@
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        if not matrix:
+            return []
+        sol = [matrix[0][0]]
+        m = len(matrix)
+        n = len(matrix[0])
+        # 0 -> right, 1 -> down, 2 -> left, 3 -> up
+        mov = 0
+        i = 0
+        j = 0
+        ct = 1
+        matrix[0][0] = '*'
+        while ct < (m*n):
+            if mov == 0:
+                j += 1
+                if j >= n or matrix[i][j] == '*':
+                    mov = 1
+                    j -= 1
+                    i += 1
+            elif mov == 1:
+                i += 1
+                if i >= m or matrix[i][j] == '*':
+                    mov = 2
+                    j -= 1
+                    i -= 1
+            elif mov == 2:
+                j -= 1
+                if j < 0 or matrix[i][j] == '*':
+                    mov = 3
+                    j += 1
+                    i -= 1
+            else:
+                i -= 1
+                if i < 0 or matrix[i][j] == '*':
+                    mov = 0
+                    j += 1
+                    i += 1
+
+            sol.append(matrix[i][j])
+            matrix[i][j] = '*'
+            ct += 1
+        return sol
