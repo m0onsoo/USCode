@@ -18,3 +18,22 @@ class Solution:
             dp[i] = max(dp[i - 1], dp[i - 1] + curr)
         
         return dp[n]
+
+        """ ver2
+        n = len(prices)
+        
+        profit = 0
+        i = 0
+        while i < n - 1:
+            while i < n - 1 and prices[i] >= prices[i + 1]:
+                i += 1
+            bottom = prices[i]
+
+            while i < n - 1 and prices[i] <= prices[i + 1]:
+                i += 1
+            top = prices[i]
+            
+            profit += (top - bottom)
+
+        return profit
+        """
