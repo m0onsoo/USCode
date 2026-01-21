@@ -1,46 +1,76 @@
-# https://leetcode.com/problems/spiral-matrix/
-# 54-spiral-matrix
+# https://leetcode.com/problems/coin-change-ii/description/
+# 518-coin-change
 
 
-# Brute force:
-# while m > 0 and n > 0
-# go right until i == n-1
-# when i == n-1 : go down until j == m -1
-# when j == m-1 : go left until i == 0
-# when i == 0 : m = m - 1, go up until j == 0
-# when j == 0 : restart. go right until i == n-1
 class Solution:
-    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        rows, cols = len(matrix), len(matrix[0])
-        l_rows, l_cols = 0, 0
-        reached_right, reached_bottom = False, False
-        ans = []
+    def change(self, amount: int, coins: List[int]) -> int:
+        if amount == 0:
+            return 1
 
-        i, j = 0, 0
-        while l_rows < rows and l_cols < cols:
-            if not reached_right and not reached_bottom:
-                while j < cols - 1:
-                    ans.append(matrix[i][j])
-                    j += 1
-                l_rows += 1
-                reached_right = True
-            elif reached_right and not reached_bottom:
-                while i < rows - 1:
-                    ans.append(matrix[i][j])
-                    i += 1
-                cols -= 1
-                reached_bottom = True
-            elif reached_right and reached_bottom:
-                while j > l_cols:
-                    ans.append(matrix[i][j])
-                    j -= 1
-                rows -= 1
-                reached_right = False
-            elif not reached_right and reached_bottom:
-                while i > l_rows:
-                    ans.append(matrix[i][j])
-                    i -= 1
-                l_cols += 1
-                reached_bottom = False
-        ans.append(matrix[i][j])
+        coins.sort(reverse=True)
+
+        def dfs(amt, max_coin):
+            combinations = 0
+            for i, coin in enumerate(coins):
+                if max_coin < coin:
+                    continue
+                if amt < coin:
+                    continue
+                elif amt == coin:
+                    combinations += 1
+                elif amt > coin:
+                    combinations += dfs(amt - coin, coin)
+            return combinations
+
+        ans = dfs(amount, float("inf"))
+
         return ans
+
+
+class Solution:
+    def change(self, amount: int, coins: List[int]) -> int:
+        # 1. 계산 결과를 저장할 메모장 (Memoization)
+        memo = {}
+
+        # 큰 코인부터 처리하면 트리의 깊이가 얕아져서 조금 더 빠릅니다.
+        coins.sort(reverse=True)
+
+        # max_coin 값 대신 '현재 인덱스(idx)'를 넘기는 것이 캐싱하기 더 좋습니다.
+        def dfs(amt, idx):
+            if amt == 0:
+                return 1
+
+            # 2. 이미 계산해본 상황(금액, 인덱스)이라면 저장된 값 리턴
+            state = (amt, idx)
+            if state in memo:
+                return memo[state]
+
+            combinations = 0
+            # 3. Loop 최적화:
+            # `if max_coin < coin: continue`와 같은 효과를 내기 위해
+            # 아예 `range(idx, len(coins))`로 루프 범위를 좁힙니다.
+            for i in range(idx, len(coins)):
+                coin = coins[i]
+
+                # 금액이 남았을 때만 재귀 호출
+                if amt >= coin:
+                    # 동전 개수 제한이 없으므로, 다음 재귀에서도 현재 코인(i)부터 쓸 수 있게 넘김
+                    combinations += dfs(amt - coin, i)
+
+            # 4. 결과 저장
+            memo[state] = combinations
+            return combinations
+
+        return dfs(amount, 0)
+
+
+class Solution:
+    def change(self, amount: int, coins: List[int]) -> int:
+        DP = [0] * (amount + 1)
+        DP[0] = 1
+
+        for coin in coins:
+            for i in range(coin, amount + 1):
+                DP[i] += DP[i - coin]
+
+        return DP[amount]
