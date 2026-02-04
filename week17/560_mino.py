@@ -33,22 +33,20 @@
 # [1,1,1], 2
 # [1,2,3], k = 3
 
-dfs findTheNumOfSubarrays(nums: List[int], k:int) -> int:
-  l, r, n = 0, 0, len(nums)
-  answer, current_sum = 0,0
-  
-  while l <= r:
-    if l == n:
-      break
-    if r == n:
-	    current_sum += nums[r] # 1, 3, 5
-	    r += 1 # 1,2, 3
-    
-    # check if the sum equals to k
-    if current_sum >= k: 
-      if current_sum == k:
-      	answer += 1 # 1
-      current_sum -= nums[l] # 2, 3
-      l += 1 # 1, 2
-    
-  return answer
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        l, r, n = 0, 0, len(nums)
+        answer, current_sum = 0,0
+            
+        while l <= r < n:
+            current_sum += nums[r] # 1, 2, 2
+            r += 1 # 1, 2, 3
+            
+            # check if the sum equals to k
+            while current_sum >= k and l < n:
+                if current_sum == k:
+                    answer += 1
+                current_sum -= nums[l] # 1
+                l += 1 # 1
+                
+        return answer
