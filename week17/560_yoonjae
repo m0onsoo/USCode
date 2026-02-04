@@ -1,0 +1,13 @@
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        ct = 0
+        curr = 0
+        # dp = [0] * sum(nums)
+        hmap = {0:1}
+        for n in nums:
+            curr += n
+            if (curr - k) in hmap:
+                ct += hmap[curr-k]
+            hmap[curr] = hmap.get(curr,0) + 1
+        return ct
+
