@@ -1,13 +1,17 @@
-# 103ms, 35.23MB
+# 74ms, 28.92MB
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        if not temperatures:
+            return []
+        
         answer = [0] * len(temperatures)
-        stack = []
-        for idx, temp in enumerate(temperatures):
-            while stack and stack[-1][1] < temp:
-                prev_i, prev_t = stack.pop()
-                answer[prev_i] = idx - prev_i
+
+        stack = [] # element: day
+        for day, temp in enumerate(temperatures):
+            while stack and temperatures[stack[-1]] < temp:
+                prior_day = stack.pop()
+                answer[prior_day] = day - prior_day
             
-            stack.append((idx, temp))
+            stack.append(day)
         
         return answer
